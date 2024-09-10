@@ -10,7 +10,7 @@ public class HubController {
 	
 	@GetMapping("/get")
 	public String getAll() {
-		return "Yeah! I have stored my docker image in my hub and successfully deployed it in Dev server.";
+		return "Yeah! I have stored my docker image in my hub and successfully deployed it in Dev server.Using Kubernetes";
 		
 	}
 
