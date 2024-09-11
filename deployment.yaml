@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "helm-chart.fullname" . }}
+  name: my-hub-project
+  namespace: my-hub-project
   labels:
-    app: {{ include "helm-chart.name" . }}
+    app: my-hub-project
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: {{ include "helm-chart.name" . }}
+      app: my-hub-project
   template:
     metadata:
       labels:
-        app: {{ include "helm-chart.name" . }}
+        app: my-hub-project
     spec:
       containers:
-        - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        - name: my-app-container 
+          image: sreeju1909/rio:latest
           ports:
             - containerPort: 8080
